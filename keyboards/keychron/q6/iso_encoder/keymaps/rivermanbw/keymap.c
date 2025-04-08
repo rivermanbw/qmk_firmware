@@ -39,33 +39,40 @@ enum layers{
 // 07.04.2025: KC_CAPS ersetzt durch KC_ESC
 // 08.04.2025: Key-Overrides https://docs.qmk.fm/features/key_overrides
 
-const key_override_t switch_behavior_1 = ko_make_basic(MOD_MASK_SHIFT, S(KC_1), KC_1);
-const key_override_t switch_behavior_2 = ko_make_basic(MOD_MASK_SHIFT, S(KC_2), KC_2);
-const key_override_t switch_behavior_3 = ko_make_basic(MOD_MASK_SHIFT, S(KC_3), KC_3);
-const key_override_t switch_behavior_4 = ko_make_basic(MOD_MASK_SHIFT, S(KC_4), KC_4);
-const key_override_t switch_behavior_5 = ko_make_basic(MOD_MASK_SHIFT, S(KC_5), KC_5);
-const key_override_t switch_behavior_6 = ko_make_basic(MOD_MASK_SHIFT, S(KC_6), KC_6);
-const key_override_t switch_behavior_7 = ko_make_basic(MOD_MASK_SHIFT, S(KC_7), ALGR(KC_7)); // ALGR(7) == AltGr+7
-const key_override_t switch_behavior_8 = ko_make_basic(MOD_MASK_SHIFT, S(KC_8), ALGR(KC_8)); // ALGR(8) == AltGr+8
-const key_override_t switch_behavior_9 = ko_make_basic(MOD_MASK_SHIFT, S(KC_9), ALGR(KC_9)); // ALGR(9) == AltGr+9
-const key_override_t switch_behavior_0 = ko_make_basic(MOD_MASK_SHIFT, S(KC_0), ALGR(KC_0)); // ALGR(0) == AltGr+0
-// mit ß wird \ geschrieben
-const key_override_t switch_behavior_sz = ko_make_basic(MOD_MASK_SHIFT, ALGR(KC_MINS), S(KC_MINS)); // mit Shift+ß wird ? geschrieben
-const key_override_t switch_behavior_sz1 = ko_make_basic(MOD_MASK_ALT, ALGR(KC_MINS), KC_MINS); // mit Alt+ß wird ß geschrieben ALGR(ß) == ß
+const key_override_t switch_behavior_alt_1 = ko_make_basic(MOD_MASK_ALT, S(KC_1), KC_1); // Alt+1 == 1
+const key_override_t switch_behavior_alt_2 = ko_make_basic(MOD_MASK_ALT, S(KC_2), KC_2); // Alt+2 == 2
+const key_override_t switch_behavior_alt_3 = ko_make_basic(MOD_MASK_ALT, S(KC_3), KC_3); // Alt+3 == 3
+const key_override_t switch_behavior_alt_4 = ko_make_basic(MOD_MASK_ALT, S(KC_4), KC_4); // Alt+4 == 4
+const key_override_t switch_behavior_alt_5 = ko_make_basic(MOD_MASK_ALT, S(KC_5), KC_5); // Alt+5 == 5
+const key_override_t switch_behavior_alt_6 = ko_make_basic(MOD_MASK_ALT, S(KC_6), KC_6); // Alt+6 == 6
+const key_override_t switch_behavior_shift_7 = ko_make_basic(MOD_MASK_SHIFT, S(KC_7), ALGR(KC_7)); // ALGR(7) == AltGr+7
+const key_override_t switch_behavior_alt_7 = ko_make_basic(MOD_MASK_ALT, S(KC_7), KC_7); // Alt+7 == 7
+const key_override_t switch_behavior_shift_8 = ko_make_basic(MOD_MASK_SHIFT, S(KC_8), ALGR(KC_8)); // ALGR(8) == AltGr+8
+const key_override_t switch_behavior_alt_8 = ko_make_basic(MOD_MASK_ALT, S(KC_8), KC_8); //  Alt+8 == 8
+const key_override_t switch_behavior_shift_9 = ko_make_basic(MOD_MASK_SHIFT, S(KC_9), ALGR(KC_9)); // ALGR(9) == AltGr+9
+const key_override_t switch_behavior_alt_9 = ko_make_basic(MOD_MASK_ALT, S(KC_9), KC_9); // Alt+9 == 9
+const key_override_t switch_behavior_shift_0 = ko_make_basic(MOD_MASK_SHIFT, S(KC_0), ALGR(KC_0)); // ALGR(0) == AltGr+0
+const key_override_t switch_behavior_alt_0 = ko_make_basic(MOD_MASK_ALT, S(KC_0), KC_0); // Alt+0 == 0
+const key_override_t switch_behavior_shift_sz = ko_make_basic(MOD_MASK_SHIFT, S(KC_MINS), ALGR(KC_MINS)); // mit Shift+ß wird \ geschrieben
+const key_override_t switch_behavior_alt_sz = ko_make_basic(MOD_MASK_ALT, S(KC_MINS), KC_MINS); // mit Alt+ß wird ß geschrieben ALGR(ß) == ß
 // This globally defines all key overrides to be used
 const key_override_t *key_overrides[] = {
-    &switch_behavior_1,
-    &switch_behavior_2,
-    &switch_behavior_3,
-    &switch_behavior_4,
-    &switch_behavior_5,
-    &switch_behavior_6,
-    &switch_behavior_7,
-    &switch_behavior_8,
-    &switch_behavior_9,
-    &switch_behavior_0,
-    &switch_behavior_sz,
-    &switch_behavior_sz1,
+    &switch_behavior_alt_1 ,
+    &switch_behavior_alt_2 ,
+    &switch_behavior_alt_3 ,
+    &switch_behavior_alt_4 ,
+    &switch_behavior_alt_5 ,
+    &switch_behavior_alt_6 ,
+    &switch_behavior_shift_7 ,
+    &switch_behavior_alt_7 ,
+    &switch_behavior_shift_8 ,
+    &switch_behavior_alt_8 ,
+    &switch_behavior_shift_9 ,
+    &switch_behavior_alt_9 ,
+    &switch_behavior_shift_0 ,
+    &switch_behavior_alt_0 ,
+    &switch_behavior_shift_sz ,
+    &switch_behavior_alt_sz ,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -93,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  _______,  _______,  _______,  _______,            _______,  _______),
     [WIN_BASE] = LAYOUT_iso_110(
         KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,     KC_MUTE,  KC_PSCR,  KC_NO,    RM_NEXT,  _______,  _______,  _______,  _______,
-        KC_GRV,   S(KC_1),  S(KC_2),  S(KC_3),  S(KC_4),  S(KC_5),  S(KC_6),  S(KC_7),  S(KC_8),  S(KC_9),  S(KC_0),  ALGR(KC_MINS),  KC_EQL,     KC_BSPC,  KC_INS,   KC_HOME,  KC_PGUP,  KC_NUM,   KC_PSLS,  KC_PAST,  KC_PMNS,
+        KC_GRV,   S(KC_1),  S(KC_2),  S(KC_3),  S(KC_4),  S(KC_5),  S(KC_6),  S(KC_7),  S(KC_8),  S(KC_9),  S(KC_0),  S(KC_MINS),  KC_EQL,     KC_BSPC,  KC_INS,   KC_HOME,  KC_PGUP,  KC_NUM,   KC_PSLS,  KC_PAST,  KC_PMNS,
         KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,              KC_DEL,   KC_END,   KC_PGDN,  KC_P7,    KC_P8,    KC_P9,
         KC_ESC,   HOME_A,   HOME_S,   HOME_D,   HOME_F,   KC_G,     KC_H,     HOME_J,   HOME_K,   HOME_L,   HOME_COMM,KC_QUOT,  KC_NUHS,    KC_ENT,                                 KC_P4,    KC_P5,    KC_P6,    KC_PPLS,
         KC_LSFT,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_SCLN,  KC_DOT,   KC_SLSH,              KC_RSFT,            KC_UP,              KC_P1,    KC_P2,    KC_P3,
