@@ -38,6 +38,7 @@ enum layers{
 // Zum Flashen der q6 Tastatur: USB-C Kabel ziehen, ESC gedrückt halten und USB-C Kabel wieder einstecken.
 // 07.04.2025: KC_CAPS ersetzt durch KC_ESC
 // 08.04.2025: Key-Overrides https://docs.qmk.fm/features/key_overrides
+// 09.04.2025: Bei Problemen mit den Keymappings auf Remote Desktop Verbindungen: Eigenschaften der .rdp-Datei öffnen, "Lokale Ressourcen", Tastatur "Auf diesem Computer" einstellen!
 
 const key_override_t switch_behavior_alt_1 = ko_make_basic(MOD_MASK_ALT, S(KC_1), KC_1); // Alt+1 == 1
 const key_override_t switch_behavior_alt_2 = ko_make_basic(MOD_MASK_ALT, S(KC_2), KC_2); // Alt+2 == 2
